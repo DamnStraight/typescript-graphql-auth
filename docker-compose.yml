@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    build: .
+    depends_on:
+      - redis
+    links: 
+      - redis:redis
+    ports:
+      - "4000:4000"
+    command: yarn start
+    volumes:
+      - .:/app/
+      - /app/node_modules
+      
+  redis:
+    image: redis:latest
+    # ports:
+    #   - "6379:6379"
+    # expose:
+    #   - 6379
+    # command: ['redis-server', '--bind', 'redis', '--port', '6379']

@@ -1,0 +1,8 @@
+# local .env* files
+.env.local
+.env.*.local
+
+# sqlite3 db used during local testing
+*.sqlite
+
+yarn-error.log
